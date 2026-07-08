@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1160 540" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Helvetica, Arial, sans-serif">
+  <rect x="0.5" y="0.5" width="1159" height="539" rx="16" fill="#f8fafc" stroke="#e2e8f0"/>
+  <text x="36" y="32" font-size="11.5" letter-spacing="2.5" fill="#94a3b8" font-family="'SF Mono', ui-monospace, monospace">THE SUBAGENT ROSTER</text>
+  <text x="36" y="58" font-size="21" font-weight="700" letter-spacing="-0.4" fill="#1e293b">~25 native subagents, three roles, one rule: the maker never judges its own work</text>
+
+  <!-- connectors (clearer) -->
+  <path d="M182 311 C 214 311 218 158 250 158" fill="none" stroke="#94a3b8" stroke-width="1.8"/>
+  <path d="M182 311 L 250 318" fill="none" stroke="#94a3b8" stroke-width="1.8"/>
+  <path d="M182 311 C 214 311 218 458 250 458" fill="none" stroke="#94a3b8" stroke-width="1.8"/>
+  <path d="M440 158 L464 158" stroke="#94a3b8" stroke-width="1.8"/>
+  <path d="M440 318 L464 318" stroke="#94a3b8" stroke-width="1.8"/>
+  <path d="M440 458 L464 458" stroke="#94a3b8" stroke-width="1.8"/>
+
+  <rect x="32" y="278" width="150" height="66" rx="14" fill="#1e293b"/>
+  <text x="52" y="306" font-size="15" font-weight="700" fill="#ffffff">Subagents</text>
+  <text x="52" y="327" font-size="11.5" fill="#cbd5e1">~25 &#183; least-privilege</text>
+
+  <rect x="250" y="132" width="190" height="52" rx="12" fill="#0d9488"/>
+  <text x="270" y="155" font-size="13.5" font-weight="700" fill="#ffffff">Build specialists</text>
+  <text x="270" y="173" font-size="11" fill="#cbeee8">write code &#183; 10</text>
+  <rect x="250" y="292" width="190" height="52" rx="12" fill="#f2603c"/>
+  <text x="270" y="315" font-size="13.5" font-weight="700" fill="#ffffff">Research &amp; oversight</text>
+  <text x="270" y="333" font-size="11" fill="#fdded5">read-only, quarantined &#183; 8</text>
+  <rect x="250" y="432" width="190" height="52" rx="12" fill="#6366f1"/>
+  <text x="270" y="455" font-size="13.5" font-weight="700" fill="#ffffff">Judges &amp; council</text>
+  <text x="270" y="473" font-size="11" fill="#dfe1fc">score, never build &#183; 7</text>
+
+  <rect x="464" y="74" width="688" height="168" rx="14" fill="#d5f2ec"/>
+  <g font-size="11.5" fill="#1e293b" text-anchor="middle">
+    <rect x="480" y="86" width="204" height="30" rx="8" fill="#fff" stroke="#bfe8e0"/><text x="582" y="105">backend</text>
+    <rect x="706" y="86" width="204" height="30" rx="8" fill="#fff" stroke="#bfe8e0"/><text x="808" y="105">frontend</text>
+    <rect x="932" y="86" width="204" height="30" rx="8" fill="#fff" stroke="#bfe8e0"/><text x="1034" y="105">data</text>
+    <rect x="480" y="124" width="204" height="30" rx="8" fill="#fff" stroke="#bfe8e0"/><text x="582" y="143">ai-engineering</text>
+    <rect x="706" y="124" width="204" height="30" rx="8" fill="#fff" stroke="#bfe8e0"/><text x="808" y="143">evals</text>
+    <rect x="932" y="124" width="204" height="30" rx="8" fill="#fff" stroke="#bfe8e0"/><text x="1034" y="143">security</text>
+    <rect x="480" y="162" width="204" height="30" rx="8" fill="#fff" stroke="#bfe8e0"/><text x="582" y="181">planning</text>
+    <rect x="706" y="162" width="204" height="30" rx="8" fill="#fff" stroke="#bfe8e0"/><text x="808" y="181">research</text>
+    <rect x="932" y="162" width="204" height="30" rx="8" fill="#fff" stroke="#bfe8e0"/><text x="1034" y="181">writing</text>
+    <rect x="480" y="200" width="204" height="30" rx="8" fill="#fff" stroke="#bfe8e0"/><text x="582" y="219">implementer</text>
+  </g>
+
+  <rect x="464" y="254" width="688" height="128" rx="14" fill="#fde5dd"/>
+  <g font-size="11.5" fill="#1e293b" text-anchor="middle">
+    <rect x="480" y="266" width="204" height="30" rx="8" fill="#fff" stroke="#f6d3c8"/><text x="582" y="285">project-advisor</text>
+    <rect x="706" y="266" width="204" height="30" rx="8" fill="#fff" stroke="#f6d3c8"/><text x="808" y="285">discovery-scout</text>
+    <rect x="932" y="266" width="204" height="30" rx="8" fill="#fff" stroke="#f6d3c8"/><text x="1034" y="285">guidelines-monitor</text>
+    <rect x="480" y="304" width="204" height="30" rx="8" fill="#fff" stroke="#f6d3c8"/><text x="582" y="323">opportunity-finder</text>
+    <rect x="706" y="304" width="204" height="30" rx="8" fill="#fff" stroke="#f6d3c8"/><text x="808" y="323">blindspot-scout</text>
+    <rect x="932" y="304" width="204" height="30" rx="8" fill="#fff" stroke="#f6d3c8"/><text x="1034" y="323">utilization-coord</text>
+    <rect x="480" y="342" width="204" height="30" rx="8" fill="#fff" stroke="#f6d3c8"/><text x="582" y="361">loop-auditor</text>
+    <rect x="706" y="342" width="204" height="30" rx="8" fill="#fff" stroke="#f6d3c8"/><text x="808" y="361">frontier-advisor</text>
+  </g>
+
+  <rect x="464" y="394" width="688" height="128" rx="14" fill="#e6e7fd"/>
+  <g font-size="11.5" fill="#1e293b" text-anchor="middle">
+    <rect x="480" y="406" width="204" height="30" rx="8" fill="#fff" stroke="#d5d7f8"/><text x="582" y="425">acceptance-gate</text>
+    <rect x="706" y="406" width="204" height="30" rx="8" fill="#fff" stroke="#d5d7f8"/><text x="808" y="425">system auditor</text>
+    <rect x="932" y="406" width="204" height="30" rx="8" fill="#fff" stroke="#d5d7f8"/><text x="1034" y="425">idea-sharpener</text>
+    <rect x="480" y="444" width="204" height="30" rx="8" fill="#fff" stroke="#d5d7f8"/><text x="582" y="463">user-pain-validator</text>
+    <rect x="706" y="444" width="204" height="30" rx="8" fill="#fff" stroke="#d5d7f8"/><text x="808" y="463">build-realist</text>
+    <rect x="932" y="444" width="204" height="30" rx="8" fill="#fff" stroke="#d5d7f8"/><text x="1034" y="463">market-strategist</text>
+    <rect x="480" y="482" width="204" height="30" rx="8" fill="#fff" stroke="#d5d7f8"/><text x="582" y="501">devil's-advocate</text>
+    <text x="716" y="501" font-size="11" fill="#8b8fd6" text-anchor="start">the five council agents run in sequence, before any build</text>
+  </g>
+</svg>

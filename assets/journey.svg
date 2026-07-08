@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 380" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Helvetica, Arial, sans-serif">
+  <rect x="0.5" y="0.5" width="999" height="379" rx="16" fill="#f8fafc" stroke="#e2e8f0"/>
+  <text x="36" y="52" font-size="24" font-weight="700" letter-spacing="-0.4" fill="#1e293b">From a prompt to a shipped application</text>
+  <text x="36" y="78" font-size="15" fill="#64748b">One idea, one lane, a quality gate at every step.</text>
+
+  <rect x="36" y="130" width="76" height="78" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-dasharray="4 3"/>
+  <text x="74" y="164" font-size="12.5" font-weight="600" fill="#64748b" text-anchor="middle">idea</text>
+  <text x="74" y="182" font-size="12.5" font-weight="600" fill="#64748b" text-anchor="middle">prompt</text>
+
+  <g>
+    <rect x="124" y="130" width="108" height="78" rx="14" fill="#0d9488"/>
+    <text x="138" y="165" font-size="14" font-weight="700" fill="#ffffff">Brainstorm</text>
+    <text x="138" y="186" font-size="12" fill="#cbeee8">sharpen</text>
+  </g>
+  <g>
+    <rect x="246" y="130" width="108" height="78" rx="14" fill="#f2603c"/>
+    <text x="260" y="165" font-size="14" font-weight="700" fill="#ffffff">Research</text>
+    <text x="260" y="186" font-size="12" fill="#fdded5">verify</text>
+  </g>
+  <g>
+    <rect x="368" y="130" width="108" height="78" rx="14" fill="#6366f1"/>
+    <text x="382" y="165" font-size="14" font-weight="700" fill="#ffffff">Plan</text>
+    <text x="382" y="186" font-size="12" fill="#dfe1fc">spec + tests</text>
+  </g>
+  <g>
+    <rect x="490" y="130" width="108" height="78" rx="14" fill="#0d9488"/>
+    <text x="504" y="165" font-size="14" font-weight="700" fill="#ffffff">Resources</text>
+    <text x="504" y="186" font-size="12" fill="#cbeee8">select</text>
+  </g>
+  <g>
+    <rect x="612" y="130" width="108" height="78" rx="14" fill="#f2603c"/>
+    <text x="626" y="165" font-size="14" font-weight="700" fill="#ffffff">Execution</text>
+    <text x="626" y="186" font-size="12" fill="#fdded5">build</text>
+  </g>
+  <g>
+    <rect x="734" y="130" width="108" height="78" rx="14" fill="#6366f1"/>
+    <text x="748" y="165" font-size="14" font-weight="700" fill="#ffffff">Deployment</text>
+    <text x="748" y="186" font-size="12" fill="#dfe1fc">ship</text>
+  </g>
+
+  <rect x="858" y="130" width="106" height="78" rx="14" fill="#1e293b"/>
+  <text x="911" y="164" font-size="12.5" font-weight="700" fill="#ffffff" text-anchor="middle">shipped</text>
+  <text x="911" y="182" font-size="12.5" font-weight="700" fill="#ffffff" text-anchor="middle">app</text>
+
+  <g fill="#1e293b">
+    <rect x="112" y="163" width="10" height="10" rx="2" transform="rotate(45 117 168)"/>
+    <rect x="234" y="163" width="10" height="10" rx="2" transform="rotate(45 239 168)"/>
+    <rect x="356" y="163" width="10" height="10" rx="2" transform="rotate(45 361 168)"/>
+    <rect x="478" y="163" width="10" height="10" rx="2" transform="rotate(45 483 168)"/>
+    <rect x="600" y="163" width="10" height="10" rx="2" transform="rotate(45 605 168)"/>
+    <rect x="722" y="163" width="10" height="10" rx="2" transform="rotate(45 727 168)"/>
+    <rect x="844" y="163" width="10" height="10" rx="2" transform="rotate(45 849 168)"/>
+  </g>
+
+  <rect x="36" y="244" width="9" height="9" rx="2" fill="#1e293b" transform="rotate(45 40.5 248.5)"/>
+  <text x="54" y="252" font-size="12.5" fill="#64748b"><tspan fill="#1e293b" font-weight="600">gate</tspan> at every exit — SHIP, or BLOCK back to the stage that failed. The maker never judges its own work.</text>
+
+  <!-- lessons loop: clean dashed path + filled arrowhead into Brainstorm -->
+  <path d="M 788 210 L 788 288 Q 788 296 780 296 L 186 296 Q 178 296 178 288 L 178 220" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <path d="M 178 208 L 171.5 221 L 184.5 221 Z" fill="#94a3b8"/>
+  <text x="483" y="292" font-size="12" fill="#64748b" text-anchor="middle"><tspan fill="#1e293b" font-weight="600">lessons loop</tspan> — every correction becomes one line, read at the start of the next run</text>
+
+  <text x="36" y="352" font-size="12" fill="#94a3b8">Plans are declarative: each requirement starts failing and flips to passing only with proof. Pivot after research and plan — kill, pivot, or proceed.</text>
+</svg>
