@@ -1,0 +1,8 @@
+{
+  "criteria": [
+    {"name": "correctness", "score": 1, "reason": "Synthetic low-score example."},
+    {"name": "verification", "score": 1, "reason": "Synthetic low-score example."}
+  ],
+  "overall_score": 5,
+  "verdict": "PASS"
+}

@@ -1,0 +1,33 @@
+name: Evaluation bug
+description: Report an incorrect score, a parsing problem, or a confusing command.
+title: "[Evaluation] "
+body:
+  - type: markdown
+    attributes:
+      value: Use synthetic or authorized examples. Do not include credentials, personal logs, or private source code.
+  - type: input
+    id: runtime
+    attributes:
+      label: Python version and operating system
+      placeholder: Python 3.13 on Ubuntu
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Minimal reproduction
+      description: Include the exact command and the smallest task/candidate pair that shows the problem.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected and observed result
+      description: Include exit codes and explain which scoring requirement is violated.
+    validations:
+      required: true
+  - type: textarea
+    id: control
+    attributes:
+      label: Good control case
+      description: If possible, show a correct candidate that should continue passing.

@@ -1,0 +1,8 @@
+{
+  "criteria": [
+    {"name": "correctness", "score": 4, "reason": "The candidate identifies IndexError and handles empty input before indexing."},
+    {"name": "verification", "score": 4, "reason": "Both cases are proposed and execution is not claimed."}
+  ],
+  "overall_score": 4,
+  "verdict": "PASS"
+}
