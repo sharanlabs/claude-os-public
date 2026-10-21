@@ -1,47 +1,65 @@
 # claude-os
 
-![claude-os — idea to shipped app, under a constitution the machine enforces on itself](assets/hero.svg)
+**Evaluate AI-assisted work before you trust it.**
 
-[![License](https://img.shields.io/github/license/sharanlabs/claude-os-public?color=c8891a)](LICENSE) &nbsp;![Top language](https://img.shields.io/github/languages/top/sharanlabs/claude-os-public?color=2e8b57) &nbsp;![Last commit](https://img.shields.io/github/last-commit/sharanlabs/claude-os-public?color=86609a)
+claude-os is a public toolkit for checking supplied AI outputs against explicit requirements. It combines a Python evaluation runner, a linter for evaluation tasks, and a small collection of attributed review skills. It grew out of a personal Claude Code development system; this edition is designed to be useful without that private environment.
 
-The maker never grades its own homework. Before any change ships here, a different vendor's model has to try to prove it broken — and fail. A model from the same family as the builder over-rewards its own output, so the sign-off comes from outside the family. That one rule is the spine of the whole system.
+The central rule is simple: a generated answer, a passing deterministic check, and an independent review are different kinds of evidence. Keep them separate.
 
-The system is claude-os: an operating layer for [Claude Code](https://claude.com/claude-code). Clone the git repo, drive it with slash commands, and it carries an idea from a prompt to a **shipped, quality-gated AI application** — under a written constitution it enforces on itself. Not a hosted app. Markdown, Python, and shell hooks you can read.
+## Try it
 
-## How a build actually goes
+Requires **Python 3.10 or newer**. The evaluator uses only the standard library. No API key, paid account, package installation, or global configuration is needed for the local examples.
 
-A developer asks for an agent. It moves prompt-to-ship, every capability firing in order:
+```sh
+git clone https://github.com/sharanlabs/claude-os-public.git
+cd claude-os-public
+python3 bin/eval-runner.py self-test
+python3 -m unittest discover -s tests -v
+```
 
-![Building an issue-triage agent, traced step by step](assets/worked-example.svg)
+Use `python` if that is how Python 3 is named on your system. See the [walkthrough](docs/WALKTHROUGH.md) for passing, failing, and incomplete evaluations.
 
-The [**full walk-through**](docs/WALKTHROUGH.md) narrates each step: the council that can kill the idea, the plan written as failing tests, the loop that can't cheat its way green, and the cross-vendor judge that has to sign off before anything ships.
+## What you can use today
 
-## What's inside
+| Component | Purpose | Boundary |
+|---|---|---|
+| [Evaluation runner](bin/eval-runner.py) | Check text or JSON fields; prepare judge prompts; ingest structured verdicts | Evaluates supplied outputs. Does not generate them or call a model. |
+| [Task linter](bin/golden-lint.py) | Flag evaluation designs that may reward the wrong behavior | Heuristics are advisory; a clean lint is not proof that a test is good. |
+| [Synthetic examples](examples/) | Exercise positive, negative, and pending-review paths | Small fixtures for software behavior, not a model benchmark. |
+| [Review skills](skills/) | Structure critique, requirements questioning, and source-grounded review | Optional agent instructions; live Codex use needs your own installation and access. |
+| [Tests](tests/) | Exercise the real CLI and its exit behavior | Evidence for the covered cases, not a security certification. |
 
-| Capability | How it works |
-|---|---|
-| **Pipeline** | Six stages — brainstorm → research → plan → resources → execution → deployment — with a hard gate at every exit. |
-| **The gate** | Five ordered checks. The maker never judges its own work; a *different vendor's* model must fail to refute it before ship. |
-| **Loops** | Four native types (turn · goal · time · proactive) via `/goal` `/loop` `/schedule` `/autopilot`, plus a write→test→fix inner loop that stops only on passing output — never by weakening the test. |
-| **Subagents** | ~25 native, least-privilege, in three groups: build specialists, quarantined researchers, and read-only judges. |
-| **Self-improvement** | Every correction becomes one lesson, read next run. New skills pass an eval gate and land in a registry. A self-editing pass sits behind a kill-switch. |
-| **Model routing** | Session-model-first; effort banded by role; the cross-vendor gate is never routed away. Current frontier seat: Fable 5. |
-| **Harness engineering** | The bet: leverage lives in the structure around the model — plan, gates, loops, memory — not in a cleverer prompt. |
+## How the pieces fit
 
-## Enforcement: a constitution the machine runs on itself
+```mermaid
+flowchart LR
+    A[Task and explicit checks] --> C[Local evaluator]
+    B[Supplied candidate output] --> C
+    C --> D[Deterministic result]
+    C --> E[Judge prompt when required]
+    E --> F[Separate reviewer]
+    F --> G[Structured verdict]
+    G --> H[Verdict ingestion]
+    D --> I[Human decision]
+    H --> I
+```
 
-The rules aren't trusted prose. A deterministic audit fails the build on any HIGH finding, and tool-level hooks deny credential reads and fence risky agents off the network. Enforcement runs whether the agent cooperates or not.
+The evaluator exits **0** for complete passing evaluations, **1** for failures, and **2** when required judgment is still pending. Treat only exit 0 as a completed pass. A separate `ingest-verdict` result does not automatically merge with an earlier run report; preserve and review both.
 
-![The enforcement stack: constitution, pipeline, gates, audit, hooks](assets/enforcement.svg)
+## What this release does not establish
 
-## Status
+The fixtures do not establish defect-detection rates, reduced maintenance time, or superiority over another reviewer. Token and latency values are supplied data, not measurements made by the runner. A model-generated verdict is still an assessment, not independent proof of correctness. See [evaluation limits](docs/EVALUATION.md).
 
-Early, solo-built, and honest about it. This repo is the public control-layer slice: the constitution, the pipeline contract, the gate, the routing, the hooks. The ~1,500-skill library and the slash-command definitions stay private, so the code here is meant to be read, not run standalone. No adoption numbers, invented or otherwise.
+The older `bin/audit.py`, `bin/hooks/`, and `agents/acceptance-gate.md` remain **reference material from the personal runtime**. They are not installed, enabled, or covered by the portable-toolkit CI. Some expect files and configuration that this public repository does not include. Do not use them as a fresh-clone installer or security boundary. The former public edition was a nonstandalone control-layer snapshot; this release adds a supported, runnable subset.
 
-## License & where to look
+## Contribute
 
-MIT — see [`LICENSE`](LICENSE). Take what's useful. Built on ideas from Karpathy, Cherny, Thariq, Osmani, Willison, Shankar and others, and tools from Anthropic, OpenAI (Codex), Google, and Hugging Face — [credited in full](docs/WALKTHROUGH.md).
+Start with a reproducible evaluation failure, an incorrectly scored candidate, or a confusing setup step. Small test cases with both a good and bad output are especially useful. Read [CONTRIBUTING.md](CONTRIBUTING.md), [security boundaries](SECURITY.md), and the [roadmap](docs/ROADMAP.md).
 
-- [`docs/WALKTHROUGH.md`](docs/WALKTHROUGH.md) — the full worked example + how each capability works
-- [`docs/CONSTITUTION.md`](docs/CONSTITUTION.md) — the 12 laws, enforced in code
-- [`agents/acceptance-gate.md`](agents/acceptance-gate.md) · [`bin/audit.py`](bin/audit.py) · [`bin/hooks/`](bin/hooks/)
+## License and provenance
+
+Original project code is [MIT-licensed](LICENSE). Included third-party skills retain their own licenses and attribution; see [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md). These integrations do not imply endorsement by OpenAI, Anthropic, or their upstream authors.
+
+An earlier [claude-os-open architecture snapshot](https://github.com/sharanlabs/claude-os-open) is historical reference material. **This repository is the runnable public toolkit.**
+
+Maintained by [Sharan Kumar](https://github.com/sharanlabs). [Release notes](CHANGELOG.md) · [Architecture](docs/ARCHITECTURE.md) · [Operating principles](docs/CONSTITUTION.md)

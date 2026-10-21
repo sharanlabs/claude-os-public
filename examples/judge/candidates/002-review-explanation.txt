@@ -1,0 +1,3 @@
+Indexing an empty list raises IndexError at line 2. Return None when items is empty;
+otherwise return items[0]. Test first([]) == None and first([7, 8]) == 7.
+These are proposed tests; I have not executed them.

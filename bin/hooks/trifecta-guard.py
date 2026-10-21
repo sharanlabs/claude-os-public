@@ -241,7 +241,7 @@ def _self_test():
         ("glob pattern into .aws", {"tool_name": "Glob",
             "tool_input": {"pattern": "**/.aws/credentials"}}, True),
         ("webfetch file:// secret", {"tool_name": "WebFetch",
-            "tool_input": {"url": "file:///Users/x/.ssh/id_rsa"}}, True),
+            "tool_input": {"url": "file:///Users/example/.ssh/id_rsa"}}, True),
         ("case variant .AWS", {"tool_name": "Read",
             "tool_input": {"file_path": os.path.join(HOME, ".AWS", "credentials")}}, CASEFOLD),
         ("quarantined reader tries Bash", {"tool_name": "Bash", "agent_type": "discovery-scout",

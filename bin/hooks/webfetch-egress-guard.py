@@ -216,19 +216,19 @@ def _self_test():
             "tool_input": {"url": "https://evil.com\\@github.com/x"}}, True),
         # --- council writes: only the PROJECT's shared_reasoning.md (within cwd, no symlink) ---
         ("council write shared_reasoning.md in cwd", {"tool_name": "Write", "agent_type": C,
-            "cwd": "/Users/x/proj", "tool_input": {"file_path": "/Users/x/proj/shared_reasoning.md"}}, False),
+            "cwd": "/Users/example/proj", "tool_input": {"file_path": "/Users/example/proj/shared_reasoning.md"}}, False),
         ("council edit shared_reasoning.md (relative, in cwd)", {"tool_name": "Edit", "agent_type": C,
-            "cwd": "/Users/x/proj", "tool_input": {"file_path": "shared_reasoning.md"}}, False),
+            "cwd": "/Users/example/proj", "tool_input": {"file_path": "shared_reasoning.md"}}, False),
         ("council write /tmp/shared_reasoning.md (right name, OUTSIDE cwd)", {"tool_name": "Write", "agent_type": C,
-            "cwd": "/Users/x/proj", "tool_input": {"file_path": "/tmp/shared_reasoning.md"}}, True),
+            "cwd": "/Users/example/proj", "tool_input": {"file_path": "/tmp/shared_reasoning.md"}}, True),
         ("council write settings.json", {"tool_name": "Edit", "agent_type": C,
-            "tool_input": {"file_path": "/Users/x/claude-os/.claude/settings.json"}}, True),
+            "tool_input": {"file_path": "/Users/example/claude-os/.claude/settings.json"}}, True),
         ("council tamper with this guard", {"tool_name": "Write", "agent_type": C,
-            "tool_input": {"file_path": "/Users/x/claude-os/bin/hooks/webfetch-egress-guard.py"}}, True),
+            "tool_input": {"file_path": "/Users/example/claude-os/bin/hooks/webfetch-egress-guard.py"}}, True),
         ("council edit an agent definition", {"tool_name": "Edit", "agent_type": C,
-            "tool_input": {"file_path": "/Users/x/claude-os/agents/devils-advocate.md"}}, True),
+            "tool_input": {"file_path": "/Users/example/claude-os/agents/devils-advocate.md"}}, True),
         ("council write decisions_log.md (orchestrator's file)", {"tool_name": "Write", "agent_type": C,
-            "tool_input": {"file_path": "/Users/x/proj/decisions_log.md"}}, True),
+            "tool_input": {"file_path": "/Users/example/proj/decisions_log.md"}}, True),
         # --- council exec/fan-out: denied outright ---
         ("council Bash", {"tool_name": "Bash", "agent_type": C,
             "tool_input": {"command": "ls"}}, True),
@@ -247,7 +247,7 @@ def _self_test():
         ("council malformed tool_input", {"tool_name": "WebFetch", "agent_type": C,
             "tool_input": []}, True),  # empty url after type-guard -> deny (fail-closed for matched council fetches)
         ("council read allowed (not gated)", {"tool_name": "Read", "agent_type": C,
-            "tool_input": {"file_path": "/Users/x/proj/notes.md"}}, False),
+            "tool_input": {"file_path": "/Users/example/proj/notes.md"}}, False),
     ]
     ok = True
     for name, payload, expect in cases:
