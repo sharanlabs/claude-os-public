@@ -19,5 +19,6 @@ Run one independent pilot on a permitted real change. Publish the setup, human-e
 2. Evaluate held-out defects and clean changes, reporting false positives and missed defects as well as successes.
 3. Make combined deterministic/judge reports easier to audit.
 4. Publish additional original controls only when their dependencies, installation, tests, and limits are portable.
+5. Package the `/claude-os` intake, `/autopilot` execution workflow, and selected specialist agents for a fresh public installation, after dependency/license review and an end-to-end example build. These commands are not included in the current release.
 
 Additional third-party skills require an individual license and dependency review. The private skill corpus, personal state, raw research, credentials, and machine configuration are outside the public roadmap.
