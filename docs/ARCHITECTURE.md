@@ -1,5 +1,7 @@
 # Public toolkit architecture
 
+The broader claude-os system uses slash commands and specialist agents to guide AI product builds. This document describes the supported public subset; see [the specialist workflow](SPECIALIST-WORKFLOW.md) for the larger product experience and command availability.
+
 The supported execution path is `bin/eval-runner.py`. It reads task Markdown and candidate text from paths provided by the caller, evaluates configured deterministic checks, and prints a report. An optional `--json` path writes that report. Candidate text may contain JSON when a check targets a dotted field.
 
 A task can require subjective judgment. The runner prepares a prompt containing the task, reference, rubric, and candidate. The operator gives that prompt to a separate reviewer, saves the structured verdict, and uses `ingest-verdict` to validate and score it. The runner does not authenticate to a provider, submit a prompt, decide who wrote the candidate, or prove that the reviewer is independent.

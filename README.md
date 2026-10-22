@@ -1,12 +1,31 @@
 # claude-os
 
-**Evaluate AI-assisted work before you trust it.**
+**From an AI product idea to a specialist-assisted build.**
 
-claude-os is a public toolkit for checking supplied AI outputs against explicit requirements. It combines a Python evaluation runner, a linter for evaluation tasks, and a small collection of attributed review skills. It grew out of a personal Claude Code development system; this edition is designed to be useful without that private environment.
+claude-os organizes AI product development around **slash commands, a planning council, specialist agents, and explicit review gates**. In the full configured Claude Code system, you start with `/claude-os <idea>`: clarify the outcome, choose the right skills and specialists, agree on a plan, then hand the approved goal to `/autopilot` for implementation and verification.
 
-The central rule is simple: a generated answer, a passing deterministic check, and an independent review are different kinds of evidence. Keep them separate.
+This repository publishes a **runnable evaluation toolkit and selected review skills from that larger system**. The full slash-command engine and specialist roster are not bundled in this public release. You can run the local examples below today; the full-system examples describe the configured system rather than commands enabled by cloning this repository.
 
-## Try it
+## What using claude-os looks like
+
+For example, in the **full configured system**:
+
+```text
+/claude-os Build an AI support assistant that cites approved documentation and escalates uncertain answers.
+```
+
+The workflow is designed to help turn that request into a concrete product:
+
+1. **Clarify what to build.** A planning council sharpens the idea, examines user needs and feasibility, and helps settle the goal with you.
+2. **Choose the specialists.** The project advisor selects the relevant skills and agents. An AI engineering specialist can handle retrieval and agent behavior; frontend and backend specialists handle the interface and service contracts; evaluation and security specialists assess the relevant failure modes.
+3. **Build against an approved goal.** `/autopilot` drives execution after the goal and success criteria are settled, coordinating the chosen specialists and verification steps.
+4. **Review the result.** Separate reviewers assess the work and its evidence. External publication and deployment remain subject to human authorization.
+
+For an existing project, `/enhance` proposes ranked improvements; accepted proposals return to the planning/build workflow. It is a proposal command, not an automatic implementation command.
+
+The practical aim is to give a developer one coherent path from an idea to implementation, with expertise selected for the task, progress recorded, and evidence checked along the way. [See the specialist workflow and publication boundary](docs/SPECIALIST-WORKFLOW.md).
+
+## Try the public toolkit
 
 Requires **Python 3.10 or newer**. The evaluator uses only the standard library. No API key, paid account, package installation, or global configuration is needed for the local examples.
 
@@ -29,7 +48,7 @@ Use `python` if that is how Python 3 is named on your system. See the [walkthrou
 | [Review skills](skills/) | Structure critique, requirements questioning, and source-grounded review | Optional agent instructions; live Codex use needs your own installation and access. |
 | [Tests](tests/) | Exercise the real CLI and its exit behavior | Evidence for the covered cases, not a security certification. |
 
-## How the pieces fit
+## How the public evaluation pieces fit
 
 ```mermaid
 flowchart LR
